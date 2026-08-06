@@ -7,8 +7,9 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libjpeg-dev \
     zlib1g-dev \
-    python3-distutils \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install setuptools
 
 RUN pip install poetry==1.4.2
 
