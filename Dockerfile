@@ -15,8 +15,11 @@ RUN pip install poetry==1.4.2
 
 COPY pyproject.toml poetry.lock* ./
 
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --no-root
+RUN poetry config virtualenvs.create false
+
+RUN poetry source add --priority=primary mirrors-yandex https://mirror.yandex.ru/pypi/simple/
+
+RUN poetry install --no-interaction --no-ansi --no-root
 
 COPY . .
 
