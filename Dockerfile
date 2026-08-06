@@ -15,6 +15,4 @@ RUN pip install --no-index --find-links /vendor asgiref sqlparse django==4.0.6 d
 
 COPY . .
 
-RUN python manage.py collectstatic --noinput
-
 CMD ["gunicorn", "mysite.wsgi:application", "--bind", "0.0.0.0:8000"]
