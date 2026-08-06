@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mysite"
+version = "0.1.0"
+description = "Django shop and blog application"
+authors = ["dshchelokov <dshchelokovk@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "4.0.6"
+django-debug-toolbar = "4.3.0"
+djangorestframework = "3.14.0"
+django-filter = "23.5"
+pillow = "12.3.0"
+gunicorn = "26.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
