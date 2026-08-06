@@ -17,8 +17,7 @@ COPY pyproject.toml poetry.lock* ./
 
 RUN poetry config virtualenvs.create false
 
-RUN poetry source add mirrors-yandex https://mirror.yandex.ru/pypi/simple/ \
-    && poetry config pypi.mirrors-yandex.default true
+RUN mkdir -p /root/.pip && echo "[global]\nindex-url = https://mirror.yandex.ru/pypi/simple/" > /root/.pip/pip.conf
 
 RUN poetry install --no-interaction --no-ansi --no-root
 
